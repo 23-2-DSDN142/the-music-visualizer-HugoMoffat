@@ -1,6 +1,8 @@
 let firstrun = true
 let Wizard;
 
+
+
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
     if(firstrun){
@@ -14,6 +16,16 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   
   textSize(24);
   
+   let drumMap = map(drum, 0, 100, 0, 1000)
+ 
+   strokeWeight(8)
+   stroke(drum, drum)
+
+   for(var i = 1; i <= drumMap; i++){
+    var LineSpace = i + 20
+    line(10, 750 - LineSpace, 990, 750 - LineSpace)
+   }
+
    noStroke()
 
    fill(227, 81, 41);
