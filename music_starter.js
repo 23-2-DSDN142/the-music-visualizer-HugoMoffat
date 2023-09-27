@@ -1,19 +1,20 @@
+let firstrun = true
+let Wizard;
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
+    if(firstrun){
+    rectMode(CENTER)
+    Wizard = loadImage('Wizard.png')
+    firstrun = false
+  }
+  
   background(50)
   textFont('Helvetica'); // please use CSS safe fonts
-  rectMode(CENTER)
+  
   textSize(24);
-
+  
    noStroke()
-   
-
-   fill(50, 150, 240);
-   ellipse(500, 700, 4 * vocal, 4 * vocal);
-   
-   fill(255, 125)
-   ellipse(500, 700, 400 + vocal, 400 + vocal) 
 
    fill(227, 81, 41);
    ellipse(750, 350, 2 * drum, 2 * drum);
@@ -41,9 +42,17 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    rect(500, 255, 90, 50)
    rect(150, 305, 90, 50)
 
+   image(Wizard, 150,240)
+
+   fill(50, 150, 240);
+   ellipse(500, 700, 4 * vocal, 4 * vocal);
    
-
-
+   fill(255, 125)
+   ellipse(500, 700, 400 + vocal, 400 + vocal) 
+   
+   fill(242, 183, 167)
+   rect(700 + vocal, 700, 50, 200)
+   rect(300 - vocal, 700, 50, 200)
 
 
    // display "words"
