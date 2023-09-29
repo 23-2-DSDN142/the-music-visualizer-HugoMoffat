@@ -8,6 +8,8 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     if(firstrun){
     rectMode(CENTER)
     Wizard = loadImage('Wizard.png')
+    RightHand = loadImage('RightHand.png')
+    LeftHand = loadImage('LeftHand.png')
     firstrun = false
   }
   
@@ -62,9 +64,11 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    fill(255, 125)
    ellipse(500, 700, 400 + vocal, 400 + vocal) 
    
+   scale(1.2)
    fill(242, 183, 167)
-   rect(700 + vocal, 700, 50, 200)
-   rect(300 - vocal, 700, 50, 200)
+   image(RightHand, 250 - vocal, 475)
+   image(LeftHand, 525 + vocal, 475)
+  
 
 
    // display "words"
