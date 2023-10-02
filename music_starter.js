@@ -73,26 +73,33 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    scale(1.2)
    image(RightHand, 250 - vocal, 475)
    image(LeftHand, 525 + vocal, 475)
-   
-   let potionX = 625
-   let potionY = 125
-   
-   fill(255, 200)
-   ellipse(potionX+25, potionY, 100, 100)
-   rect(potionX+25, potionY-50, 30, 40)
-   fill(250, 0, colourMapDrum, 200)
-   ellipse(potionX+25, potionY, 90, 90)
-   rect(potionX+25, potionY-50, 20, 30)
-
-   fill(255, 200)
-   ellipse(potionX+150, potionY, 100, 100)
-   rect(potionX+150, potionY-50, 30, 40)
-   fill(colourMapBass, 250, 0, 200)
-   ellipse(potionX+150, potionY, 90, 90)
-   rect(potionX+150, potionY-50, 20, 30)
-
+  
+   fill(54, 31, 9)
+   rect(820, 375, 200, 750)
    fill(64, 37, 11)
-   rect(725, 200, 300, 50)
+   rect(785, 190, 100, 25)
+   rect(785, 390, 100, 25)
+   rect(785, 590, 100, 25)
+   rect(725, 375, 25, 750)
+   fill(255, 200)
+    
+   scale(1)
+   let potionX = 785
+   let potionY = 125
+
+   ellipse(potionX, potionY+200, 100, 100)
+   rect(potionX, potionY-50+200, 30, 40)
+   fill(250, 0, colourMapDrum, 200)
+   ellipse(potionX, potionY+200, 90, 90)
+   rect(potionX, potionY-50+200, 20, 30)
+
+   fill(255, 200)
+   ellipse(potionX, potionY, 100, 100)
+   rect(potionX, potionY-50, 30, 40)
+   fill(colourMapBass*2, 250, 0, 200)
+   ellipse(potionX, potionY, 90, 90)
+   rect(potionX, potionY-50, 20, 30)
+
 
    // display "words"
    textAlign(CENTER);
