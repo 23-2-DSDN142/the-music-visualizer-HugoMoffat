@@ -19,20 +19,26 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   textSize(24);
   
    let drumMap = map(drum, 0, 100, 0, 1000)
- 
+   let colourMapOther = map(other, 0, 100, 0, 255)
+   let colourMapBass = map(bass, 0, 100, 0, 255)
+   let colourMapDrum = map(drum, 0, 100, 0, 255)
+   let colourMapVocal = map(vocal, 0, 100, 0, 255)
+
    strokeWeight(8)
-   stroke(drum, drum)
+   stroke(drum, 50)
 
    for(var i = 1; i <= drumMap; i++){
     var LineSpace = i + 20
     line(10, 750 - LineSpace, 990, 750 - LineSpace)
    }
 
-   noStroke()
+   
 
-   fill(227, 81, 41);
+   fill(colourMapDrum, 81, 41)
    ellipse(750, 350, 2 * drum, 2 * drum);
+   fill(colourMapBass, 81, 41);
    ellipse(500, 150, 2 * bass, 2 * bass);
+   fill(colourMapOther, 81, 41)
    ellipse(150, 200, 2 * other, 2 * other);
    
    fill(0)
@@ -58,18 +64,35 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
    image(Wizard, 150,240)
 
-   fill(50, 150, 240);
+   fill(50, colourMapVocal, 240, 200);
    ellipse(500, 700, 4 * vocal, 4 * vocal);
    
-   fill(255, 125)
+   fill(255, colourMapVocal/2)
    ellipse(500, 700, 400 + vocal, 400 + vocal) 
    
    scale(1.2)
-   fill(242, 183, 167)
    image(RightHand, 250 - vocal, 475)
    image(LeftHand, 525 + vocal, 475)
-  
+   
+   let potionX = 625
+   let potionY = 125
+   
+   fill(255, 200)
+   ellipse(potionX+25, potionY, 100, 100)
+   rect(potionX+25, potionY-50, 30, 40)
+   fill(250, 0, colourMapDrum, 200)
+   ellipse(potionX+25, potionY, 90, 90)
+   rect(potionX+25, potionY-50, 20, 30)
 
+   fill(255, 200)
+   ellipse(potionX+150, potionY, 100, 100)
+   rect(potionX+150, potionY-50, 30, 40)
+   fill(colourMapBass, 250, 0, 200)
+   ellipse(potionX+150, potionY, 90, 90)
+   rect(potionX+150, potionY-50, 20, 30)
+
+   fill(64, 37, 11)
+   rect(725, 200, 300, 50)
 
    // display "words"
    textAlign(CENTER);
