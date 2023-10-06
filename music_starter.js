@@ -1,7 +1,11 @@
 let firstrun = true
 let Wizard;
-
-
+let PowerY1 = 750
+let PowerY2 = 750
+let PowerY3 = 750
+let PowerO1 = 0
+let PowerO2 = 0
+let PowerO3 = 0
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
@@ -31,8 +35,6 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     var LineSpace = i + 20
     line(10, 750 - LineSpace, 990, 750 - LineSpace)
    }
-
-   
 
    fill(colourMapDrum, 81, 41)
    ellipse(750, 350, 2 * drum, 2 * drum);
@@ -71,34 +73,40 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    ellipse(500, 700, 400 + vocal, 400 + vocal) 
    
    scale(1.2)
+
    image(RightHand, 250 - vocal, 475)
    image(LeftHand, 525 + vocal, 475)
-  
-   fill(54, 31, 9)
-   rect(820, 375, 200, 750)
-   fill(64, 37, 11)
-   rect(785, 190, 100, 25)
-   rect(785, 390, 100, 25)
-   rect(785, 590, 100, 25)
-   rect(725, 375, 25, 750)
-   fill(255, 200)
-    
-   scale(1)
-   let potionX = 785
-   let potionY = 125
 
-   ellipse(potionX, potionY+200, 100, 100)
-   rect(potionX, potionY-50+200, 30, 40)
-   fill(250, 0, colourMapDrum, 200)
-   ellipse(potionX, potionY+200, 90, 90)
-   rect(potionX, potionY-50+200, 20, 30)
+   strokeWeight(0)
+   PowerR = vocal/2.5
+   fill(116, 147, colourMapVocal, PowerO1)
+   ellipse(300, PowerY1, PowerR+10, PowerR+10)
+   ellipse(450, PowerY1-80, PowerR, PowerR)
+   fill(colourMapVocal, 147, 227, PowerO2)
+   ellipse(400, PowerY2+150, PowerR-5, PowerR-5)
+   ellipse(550, PowerY2-20, PowerR, PowerR)
+   fill(116, colourMapVocal, 227, PowerO3)
+   ellipse(500, PowerY3-50, PowerR+10, PowerR+10)
+   ellipse(250, PowerY3, PowerR-5, PowerR-5)
+   PowerY1 = PowerY1 - 3
+   PowerY2 = PowerY2 - 4
+   PowerY3 = PowerY3 - 2.2
+   PowerO1 = PowerO1 + 0.5
+   PowerO2 = PowerO2 + 0.2
+   PowerO3 = PowerO3 + 0.3
 
-   fill(255, 200)
-   ellipse(potionX, potionY, 100, 100)
-   rect(potionX, potionY-50, 30, 40)
-   fill(colourMapBass*2, 250, 0, 200)
-   ellipse(potionX, potionY, 90, 90)
-   rect(potionX, potionY-50, 20, 30)
+   if(PowerY1 < -200){
+   PowerY1 = 750
+   PowerO1 = 0
+   }
+   if(PowerY2 < -200){
+   PowerY2 = 750
+   PowerO2 = 0
+   }
+   if(PowerY3 < -200){
+   PowerY3 = 750
+   PowerO3 = 0
+   }
 
 
    // display "words"
