@@ -34,32 +34,32 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     line(10, 750 - LineSpace, 990, 750 - LineSpace)
    }
 
-   fill(colourMapDrum, 81, 41) // orange candle light changes due to map
-   ellipse(750, 350, 2 * drum, 2 * drum); // candle lights
-   fill(colourMapBass, 81, 41);
-   ellipse(500, 150, 2 * bass, 2 * bass);
-   fill(colourMapOther, 81, 41)
+   fill(180, colourMapDrum, 41) // candle light changes due to map
+   ellipse(850, 350, 2 * drum, 2 * drum); // candle lights
+   fill(colourMapBass/2, 81, colourMapBass);
+   ellipse(650, 150, 2 * bass, 2 * bass);
+   fill(180, colourMapOther/2, colourMapOther)
    ellipse(150, 200, 2 * other, 2 * other);
    
    fill(0) // black
-   rect(750, 350, 5, 10) // candle wicks
-   rect(500, 150, 5, 10)
+   rect(850, 350, 5, 10) // candle wicks
+   rect(650, 150, 5, 10)
    rect(150, 200, 5, 10)
    
    fill(255, 187, 138) // beige
-   rect(750, 390, 40, 80) // candles
-   rect(500, 190, 40, 80)
+   rect(850, 390, 40, 80) // candles
+   rect(650, 190, 40, 80)
    rect(150, 240, 40, 80)
    
    fill(186, 119, 71) // brown
-   rect(763, 388, 9, 70) // candle shadows
+   rect(863, 388, 9, 70) // candle shadows
+   rect(667, 188, 5, 70)
+   rect(633, 188, 5, 70)
    rect(137, 240, 7, 70)
-   rect(517, 188, 5, 70)
-   rect(483, 188, 5, 70)
 
    fill(30) // dark grey
-   rect(750, 455, 90, 50) // shelves
-   rect(500, 255, 90, 50)
+   rect(850, 455, 90, 50) // shelves
+   rect(650, 255, 90, 50)
    rect(150, 305, 90, 50)
 
    image(Wizard, 150,240) // wizard
@@ -88,9 +88,9 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    EnergyY1 = EnergyY1 - 3 // rate of change for Y pos of emminating energy
    EnergyY2 = EnergyY2 - 4
    EnergyY3 = EnergyY3 - 2.2
-   EnergyO1 = EnergyO1 + 0.5 // rate of change for opacity of emminating energy
-   EnergyO2 = EnergyO2 + 0.2
-   EnergyO3 = EnergyO3 + 0.3
+   EnergyO1 = EnergyO1 + 0.6 // rate of change for opacity of emminating energy
+   EnergyO2 = EnergyO2 + 0.5
+   EnergyO3 = EnergyO3 + 0.7
 
    if(EnergyY1 < -200){ // resets the opacity and Y pos of emminating energy
    EnergyY1 = 750
