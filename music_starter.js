@@ -1,9 +1,9 @@
 let firstrun = true
 let Wizard;
-let EnergyY1 = 750 // Y pos of the energy emminating from the orb
+let EnergyY1 = 750 // Y pos of the energy emanating from the orb
 let EnergyY2 = 750 
 let EnergyY3 = 750 
-let EnergyO1 = 0 // opacity of emminating energy
+let EnergyO1 = 0 // opacity of emanating energy
 let EnergyO2 = 0
 let EnergyO3 = 0
 
@@ -77,7 +77,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    strokeWeight(0)
    EnergyR = vocal/2.5
    fill(116, 147, colourMapVocal, EnergyO1) // colour changes due to vocal map
-   ellipse(300, EnergyY1, EnergyR+10, EnergyR+10) // emminating energy
+   ellipse(300, EnergyY1, EnergyR+10, EnergyR+10) // emanating energy
    ellipse(450, EnergyY1-80, EnergyR, EnergyR)
    fill(colourMapVocal, 147, 227, EnergyO2)
    ellipse(400, EnergyY2+150, EnergyR-5, EnergyR-5)
@@ -85,14 +85,14 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    fill(116, colourMapVocal, 227, EnergyO3)
    ellipse(500, EnergyY3-50, EnergyR+10, EnergyR+10)
    ellipse(250, EnergyY3, EnergyR-5, EnergyR-5)
-   EnergyY1 = EnergyY1 - 3 // rate of change for Y pos of emminating energy
+   EnergyY1 = EnergyY1 - 3 // rate of change for Y pos of emanating energy
    EnergyY2 = EnergyY2 - 4
    EnergyY3 = EnergyY3 - 2.2
-   EnergyO1 = EnergyO1 + 0.6 // rate of change for opacity of emminating energy
+   EnergyO1 = EnergyO1 + 0.6 // rate of change for opacity of emanating energy
    EnergyO2 = EnergyO2 + 0.5
    EnergyO3 = EnergyO3 + 0.7
 
-   if(EnergyY1 < -200){ // resets the opacity and Y pos of emminating energy
+   if(EnergyY1 < -200){ // resets the opacity and Y pos of emanating energy
    EnergyY1 = 750
    EnergyO1 = 0
    }
